@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>RailsElearningAkira</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title>RailsElearningAkira</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-    <header>
-      <div class="header-logo">
-        <%= link_to("E-learning", "/") %>
-      </div>
-      <ul class="header-menus">
-        <li>
-          <%= link_to("About this e-learning", "/about") %>
-        </li>
-        <li>
-          <%= link_to("Signup", "/signup") %>
-        </li>
-      </ul>
-    </header>
+    <body>
+        <header>
+            <div class="header-logo">
+                <%= link_to("E-learning", "/") %>
+            </div>
+            <ul class="header-menus">
+                <% if @current_user %>
+                    <li>
+                        <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
+                    </li>
+                <% else %>
+                    <li>
+                        <%= link_to("About this e-learning", "/about") %>
+                    </li>
+                    <li>
+                        <%= link_to("Signup", "/signup") %>
+                    </li>
+                <% end %>
+            </ul>
+        </header>
 
-    <% if flash[:notice] %>
-      <div class="flash">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
-    
-    <%= yield %>
-  </body>
+        <% if flash[:notice] %>
+            <div class="flash">
+                <%= flash[:notice] %>
+            </div>
+        <% end %>
+
+        <%= yield %>
+    </body>
 </html>
