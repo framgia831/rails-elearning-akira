@@ -16,13 +16,13 @@ class UsersController < ApplicationController
       name: params[:name],
       email: params[:email],
       password: params[:password]
-      )
-      if @user.save
-        session[:user_id] = @user.id
-        flash[:notice] = "Welcome to English e-learning!"
-        redirect_to("/users/#{@user.id}")
-      else
-        render("users/new")
-      end
+    )
+    if @user.save
+      session[:user_id] = @user.id
+      flash[:notice] = "Welcome to English e-learning!"
+      redirect_to("/users/#{@user.id}")
+    else
+      render("users/new")
     end
+  end
 end
