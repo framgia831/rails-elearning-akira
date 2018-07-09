@@ -18,8 +18,18 @@
         <li>
           <%= link_to("About this e-learning", "/about") %>
         </li>
+        <li>
+          <%= link_to("Signup", "/signup") %>
+        </li>
       </ul>
     </header>
+
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    
     <%= yield %>
   </body>
 </html>
