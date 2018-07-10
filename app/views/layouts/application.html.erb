@@ -12,30 +12,32 @@
     <body>
         <header>
             <div class="header-logo">
-                <%= link_to("E-learning", "/") %>
+                    <%= link_to("E-learning", "/") %>
             </div>
             <ul class="header-menus">
-                <% if @current_user %>
+                <% if current_user %>
                     <li>
-                        <%= link_to "Profile", user_path(@current_user) %>
+                        <%= link_to @current_user.name, current_user %>    
                     </li>
+                    <li>
+                        <%= link_to "Logout", logout_path, method: :delete %>
+                    </li>
+
                 <% else %>
-                    <li>
-                        <%= link_to("About this e-learning", "/about") %>
-                    </li>
-                    <li>
-                        <%= link_to("Signup", "/signup") %>
-                    </li>
+                    <li><%= link_to("About This E-learning ", "/about") %></li>
+                    <li><%= link_to("Signup", "/signup") %></li>
+                    <li><%= link_to "Login", login_path %></li>
                 <% end %>
             </ul>
         </header>
 
         <% if flash[:notice] %>
-            <div class="flash">
-                <%= flash[:notice] %>
-            </div>
+          <div class="flash">
+            <%= flash[:notice] %>
+          </div>
         <% end %>
 
         <%= yield %>
+    </div>
     </body>
 </html>
