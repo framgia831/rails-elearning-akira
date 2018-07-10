@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   get 'session/new'
-  get 	'/users/index'
+  
   get 	'/signup', to: 'users#new'
 
   get 		'/login', to: 'session#new'
