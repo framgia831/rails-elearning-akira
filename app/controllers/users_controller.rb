@@ -30,6 +30,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @user.update_attributes(
+      name: params[:name],
+      email: params[:email],
+      password: params[:password]
+      )
+
+      flash[:notice] = "Updated your information successfully."
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end
+
   private
     def correct_user
       @user = User.find(params[:id])
