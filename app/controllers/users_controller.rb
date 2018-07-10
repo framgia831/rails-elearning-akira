@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :require_login, except: [:new, :create]
+  before_action :correct_user, only: [:edit, :update]
+
   def index
     @users = User.all
   end
@@ -18,11 +21,22 @@ class UsersController < ApplicationController
       password: params[:password]
     )
     if @user.save
-      session[:user_id] = @user.id
+      log_in @user
       flash[:notice] = "Welcome to English e-learning!"
       redirect_to("/users/#{@user.id}")
     else
+      flash[:danger] = "You have errors."
       render("users/new")
     end
   end
+
+  private
+    def correct_user
+      @user = User.find(params[:id])
+
+      unless current_user?(@user)
+        flash[:danger] = "You are not allowed here."
+        redirect_to root_url
+      end
+    end
 end
