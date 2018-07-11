@@ -1,7 +1,8 @@
 <div class="main users-new">
   <div class="container">
+    <div class="form-heading">Signup</div>
     <div class="form users-form">
-      <div class="form-heading">Signup</div>
+      
 
       <div class="form-body">
         <% @user.errors.full_messages.each do |message| %>
@@ -27,7 +28,7 @@
             <%= label_tag :password_confirmation %>
             <%= password_field_tag :confirmation %>
             </div>
-            <%= submit_tag "Create my account" %>
+            <%= submit_tag "Signup" %>
         <% end %>
       </div>
     <div>
