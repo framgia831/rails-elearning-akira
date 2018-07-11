@@ -1,7 +1,27 @@
- <div class="top-main">
-    <div class="top-message">
-        <h2>English E-learning</h2>
-        <p>Study Languages! e-learning - anytime, anywhere</p>
-    </div>
-</div>
+<div class="main top-main">
+	<div class="top-message">
+		<% if logged_in? %>
+			<div class="row">
+				<div class="col-md-4">
+					<section class="user_info">
+						<%= render 'shared/user_info' %>
+						<span>
+							<%= link_to "view my profile", current_user %>
+						</span>
+					</section>
+				</div>
+				<div class="col-md-8">
+					<h3>Here is for Activity</h3>
+				</div>
+			</div>
+		<% else %>
 
+		<div class="top-main">
+		    <div class="top-message">
+		        <h2>English E-learning</h2>
+		        <p>Study Languages! e-learning - anytime, anywhere</p>
+		    </div>
+		</div>
+		<% end %>
+	</div>
+</div>

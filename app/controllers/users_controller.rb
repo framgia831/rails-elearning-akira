@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:notice] = "Welcome to English e-learning!"
-      redirect_to("/users/#{@user.id}")
+      redirect_to("/")
     else
       flash[:danger] = "You have errors."
       render("users/new")
