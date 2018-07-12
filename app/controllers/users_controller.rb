@@ -47,6 +47,25 @@ class UsersController < ApplicationController
     end
   end
 
+  def following
+    @user = User.find(params[:id])
+    @users = @user.following
+    @title = "Following"
+    render 'show_follow'
+    # @users = @user.following
+        # @microposts = Micropost.where("user_id IN (?)", current_user.following_ids)
+        #                               .paginate(page: params[:page], per_page: 10)
+      # @microposts = current_user.feed.paginate(page: params[:page])
+      # @micropost = current_user.microposts.build
+    end
+
+    def followers
+      @user = User.find(params[:id])
+      @users = @user.followers
+      @title = "Follower"
+      render 'show_follow'
+    end
+
   private
     def correct_user
       @user = User.find(params[:id])
@@ -55,5 +74,13 @@ class UsersController < ApplicationController
         flash[:danger] = "You are not allowed here."
         redirect_to root_url
       end
+    end
+
+    def admin_user
+      unless current_user.admin?
+        flash[:danger] = "You are not allowed to do that."
+        redirect_to root_url
+      end
+      
     end
 end
