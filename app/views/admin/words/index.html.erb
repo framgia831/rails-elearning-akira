@@ -1,0 +1,12 @@
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">All Words</h1>
+      <% @words.each do |word| %>
+            <div class="users-index-item">
+                <%= link_to(word.content, "/admin/categories/#{word.category.id}/words/#{word.id}/word_answers/new") %>
+            </div>
+        <% end %>
+    
+    </div>
+  </div>
+</div>
