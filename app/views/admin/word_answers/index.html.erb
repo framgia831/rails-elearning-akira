@@ -1,6 +1,7 @@
 <div class="main users-index">
   <div class="container">
     <h1 class="users-heading">All answers</h1>
+        Word: <%= @word.content %>
       <% @answers.each do |answer| %>
             <div class="users-index-item">
                 <%= answer.content %>

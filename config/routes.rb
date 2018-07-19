@@ -34,6 +34,8 @@ Rails.application.routes.draw do
         resources :word_answers
       end
     end
+
+    
   end
 
 

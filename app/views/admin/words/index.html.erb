@@ -1,9 +1,11 @@
 <div class="main users-index">
   <div class="container">
     <h1 class="users-heading">All Words</h1>
+      Category: <%= @category.title %>
       <% @words.each do |word| %>
             <div class="users-index-item">
-                <%= link_to(word.content, "/admin/categories/#{word.category.id}/words/#{word.id}/word_answers/new") %>
+                <%= link_to(word.content, "/admin/categories/#{word.category.id}/words/#{word.id}/word_answers") %>
+                | <%= link_to "Create new option", "/admin/categories/#{word.category.id}/words/#{word.id}/word_answers/new" %>
                 | <%= link_to "Edit", "/admin/categories/#{word.category.id}/words/#{word.id}/edit" %>
             </div>
         <% end %>
