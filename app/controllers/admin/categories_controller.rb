@@ -27,4 +27,27 @@ class Admin::CategoriesController < ApplicationController
           render("new")
       end
   end
+
+  def destroy
+    @category = Category.find(params[:id])
+    @category.destroy
+    flash[:notice] = "Delete category successfully."
+    redirect_to("/admin/categories")
+  end
+
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    @category = Category.find(params[:id])
+    if @category.update_attributes(title: params[:title])
+      flash[:notice] = "Updated your category successfully."
+      redirect_to("/admin/categories")
+    else
+      render 'edit'
+    end
+  end
+
+
 end

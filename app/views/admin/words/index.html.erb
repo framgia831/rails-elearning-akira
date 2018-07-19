@@ -4,6 +4,7 @@
       <% @words.each do |word| %>
             <div class="users-index-item">
                 <%= link_to(word.content, "/admin/categories/#{word.category.id}/words/#{word.id}/word_answers/new") %>
+                | <%= link_to "Edit", "/admin/categories/#{word.category.id}/words/#{word.id}/edit" %>
             </div>
         <% end %>
     

@@ -1,41 +1,26 @@
 <div class="main users-new">
-  <div class="container">
-    <div class="form-heading">Create new options</div>
-    <div class="form users-form">
-      
+    <div class="container">
+        <div class="form-heading">Create new options</div>
+        <div class="form users-form">
+            
 
-      <div class="form-body">
-        <%= form_tag("/admin/categories/#{@word.category.id}/words/#{@word.id}/word_answers") do %>
-            <div class="form-group">
-            <%= label_tag "Option 1" %>
-            <%= text_field_tag "[word_answers][0][content]"%>
-            <%= check_box_tag "[word_answers][0][correct]" %>
-            <%= label_tag "[word_answers][0][correct]", 'Correct' %>
+            <div class="form-body">
+                <%= form_for @word, url: admin_category_word_word_answers_path(@word.category, @word), method: :post do |f| %>
+                    <%= f.fields_for :word_answers do |a| %>
+                        <div class="form-group">
+                            <%= a.label :content %>
+                            <%= a.text_field :content %>
+                            <%= a.check_box :correct %>
+                            <%= a.label :correct %>
+                        </div>
+                    <% end %>
+                    <%= f.submit "Create"%>
+                <% end %>
             </div>
-            <div class="form-group">
-            <%= label_tag "[word_answers][1][content]" %>
-            <%= text_field_tag "[word_answers][1][content]"%>
-            <%= check_box_tag "[word_answers][1][correct]" %>
-            <%= label_tag "[word_answers][1][correct]", 'Correct' %>
-            </div>
-            <div class="form-group">
-            <%= label_tag "[word_answers][2][content]" %>
-            <%= text_field_tag "[word_answers][2][content]"%>
-            <%= check_box_tag "[word_answers][2][correct]" %>
-            <%= label_tag "[word_answers][2][correct]", 'Correct' %>
-            </div>
-            <div class="form-group">
-            <%= label_tag "[word_answers][3][content]" %>
-            <%= text_field_tag "[word_answers][3][content]"%>
-            <%= check_box_tag "[word_answers][3][correct]" %>
-            <%= label_tag "[word_answers][3][correct]", 'Correct' %>
-            </div>
-                <%= submit_tag "Create"%>
-        <% end %>
 
-        
-        
-      </div>
-    <div>
-  </div>
+                
+                
+            </div>
+        <div>
+    </div>
 </div>

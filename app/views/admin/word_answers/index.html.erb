@@ -1,0 +1,13 @@
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">All answers</h1>
+      <% @answers.each do |answer| %>
+            <div class="users-index-item">
+                <%= answer.content %>
+                | <%= link_to "Edit", "/admin/categories/#{@category.id}/words/#{@word.id}/word_answers/#{answer.id}/edit" %>
+            </div>
+        <% end %>
+    
+    </div>
+  </div>
+</div>
