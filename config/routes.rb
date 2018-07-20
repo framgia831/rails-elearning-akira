@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
 
 
-  namespace :admin do
-    get 'word_answers/new'
-  end
+  get 'categories/index'
   get 'word_answers/new'
-  namespace :admin do
-    get 'word_answer/new'
-  end
+  get 'word_answers/new'
+  get 'word_answer/new'
   get 'words/new'
   get 'categories/new'
   get 'relationships/create'
