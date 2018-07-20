@@ -1,0 +1,26 @@
+<div class="main users-new">
+    <div class="container">
+        <div class="form-heading">Create new options</div>
+        <div class="form users-form">
+            
+
+            <div class="form-body">
+                <%= form_for @word, url: admin_category_word_word_answers_path(@word.category, @word), method: :post do |f| %>
+                    <%= f.fields_for :word_answers do |a| %>
+                        <div class="form-group">
+                            <%= a.label :content %>
+                            <%= a.text_field :content %>
+                            <%= a.check_box :correct %>
+                            <%= a.label :correct %>
+                        </div>
+                    <% end %>
+                    <%= f.submit "Create"%>
+                <% end %>
+            </div>
+
+                
+                
+            </div>
+        <div>
+    </div>
+</div>

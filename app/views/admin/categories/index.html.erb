@@ -1,0 +1,15 @@
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">All Categories</h1>
+      <% @categories.each do |category| %>
+            <div class="users-index-item">
+                <%= link_to(category.title, "/admin/categories/#{category.id}/words") %>
+                | <%= link_to "Create new word", "/admin/categories/#{category.id}/words/new" %>
+                | <%= link_to "Delete", "/admin/categories/#{category.id}", method: :delete, data: { confirm: "You sure?"} %>
+                | <%= link_to "Edit", "/admin/categories/#{category.id}/edit" %>
+            </div>
+        <% end %>
+       
+    </div>
+  </div>
+</div>

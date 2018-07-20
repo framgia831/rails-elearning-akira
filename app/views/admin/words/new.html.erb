@@ -1,0 +1,21 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">Create new words</div>
+    <div class="form users-form">
+      
+
+      <div class="form-body">
+        <%= form_tag("/admin/categories/#{@category.id}/words") do %>
+            <div class="form-group">
+            <%= label_tag :content %>
+            <%= text_field_tag :content%>
+            </div>
+                <%= submit_tag "Create"%>
+        <% end %>
+
+        
+        
+      </div>
+    <div>
+  </div>
+</div>

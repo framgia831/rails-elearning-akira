@@ -30,6 +30,11 @@
                     <li><%= link_to("Signup", "/signup") %></li>
                     <li><%= link_to "Login", login_path %></li>
                 <% end %>
+
+                <% if logged_in? && current_user.admin? %>
+                        <li><%= link_to "Create new category", "/admin/categories/new"%></li>
+                        <li><%= link_to "Show categories index", "/admin/categories"%></li>
+                <% end %>
             </ul>
         </header>
 
@@ -40,6 +45,5 @@
         <% end %>
 
         <%= yield %>
-    </div>
     </body>
 </html>

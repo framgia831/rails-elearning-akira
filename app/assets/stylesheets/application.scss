@@ -48,7 +48,13 @@ input {
 form input[type="submit"] {
   border: none;
   cursor: pointer;
-  padding: 7px 55px;
+  padding: 7px 31px;
+}
+
+.follow-follower-btn{
+  .btn {
+      width:165px;
+  }
 }
 
 // This is for all
@@ -156,6 +162,7 @@ header {
   margin: 0;
   font-size: 13px;
 }
+
 
 // This is for about
 

@@ -1,0 +1,16 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">Edit your word</div>
+    <div class="form users-form">
+      
+
+      <div class="form-body">
+        <%= form_tag("/admin/categories/#{@category.id}/words/#{@word.id}/word_answers/#{@answer.id}", {multipart: true, method: :patch}) do %>
+          <p>Word</p>
+          <input name="content" value="<%= @answer.content %>">
+          <input type="submit" value="Edit">
+        <% end %>
+      </div>
+    <div>
+  </div>
+</div>
