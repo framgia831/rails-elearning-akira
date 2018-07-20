@@ -1,0 +1,14 @@
+<div class="main users-index">
+  <div class="container">
+    <h1 class="users-heading">Categories</h1>
+        <% @categories.each do |category| %>
+            <div class="users-index-item">
+                <h4><%= category.title %></h4><br>
+                    <%= category.description %><br>
+                <div class="category-button">
+                    <%= link_to "Start", "/" %>
+                </div>
+            </div>
+        <% end %>
+  </div>
+</div>
