@@ -47,16 +47,7 @@ h3 {
 input {
   background-color: transparent;
   outline-width: 0;
-  background-color: #3ecdc6;
   color: white;
-  cursor: pointer;
-  font-weight: 300;
-  width: 120px;
-  border-radius: 2px;
-  margin-top: 8px;
-  margin-bottom: 0;
-  float: right;
-  padding-left: 41px
 }
 
 form input[type="submit"] {
@@ -331,6 +322,32 @@ header {
   padding-left: 41px;
 }
 
+.category-button {
+  background-color: #3ecdc6;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  width: 120px;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  float: right;
+  padding-left: 10px;
+}
 
+.lesson-button {
+  background-color: #3ecdc6;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  width: 120px;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  padding-left: 10px;
+  height: 40px;
+}
 
-
+.button {
+    margin-left: 540px;
+}
