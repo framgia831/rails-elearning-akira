@@ -23,7 +23,7 @@ class Admin::CategoriesController < ApplicationController
           flash[:notice] = "You have successfully created."
           redirect_to("/admin/categories")
       else
-          flash[:danger] = "You have errors."
+          flash[:notice] = "You have errors."
           render("new")
       end
   end

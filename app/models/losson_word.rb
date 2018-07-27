@@ -1,2 +1,0 @@
-class LossonWord < ApplicationRecord
-end

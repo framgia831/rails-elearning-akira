@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
 
+  get 'lessons/create'
+  get 'lesson_words/index'
+  get 'lessons/index'
+  get 'lesson/index'
   get 'categories/index'
   get 'word_answers/new'
   get 'word_answers/new'
@@ -31,11 +35,17 @@ Rails.application.routes.draw do
         resources :word_answers
       end
     end
-
-    
   end
 
+  resources :lessons do
+    resources :lesson_words do
+      resources :word_answers
+    end
+  end
 
+  
+
+  
 
   resources :relationships, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
