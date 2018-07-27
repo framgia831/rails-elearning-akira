@@ -1,8 +1,8 @@
 class CreateLessons < ActiveRecord::Migration[5.2]
   def change
     create_table :lessons do |t|
-      t.integer :user_id
-      t.integer :category_id
+      t.references :user, foreign_key: true
+      t.references :category, foreign_key: true
       t.string :result
 
       t.timestamps

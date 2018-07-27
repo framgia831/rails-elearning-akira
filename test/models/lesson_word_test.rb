@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LossonWordTest < ActiveSupport::TestCase
+class LessonWordTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

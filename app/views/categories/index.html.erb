@@ -1,14 +1,18 @@
 <div class="main users-index">
   <div class="container">
     <h1 class="users-heading">Categories</h1>
+    <div class="row">
         <% @categories.each do |category| %>
-            <div class="users-index-item">
+            <div class="users-index-item col-md-5">
                 <h4><%= category.title %></h4><br>
                     <%= category.description %><br>
                 <div class="category-button">
-                    <%= link_to "Start", "/" %>
+                    <%= button_to "Start", category.lessons.build(user: current_user), params: {category_id: category.id} %>
                 </div>
             </div>
+            <div class="col-md-1">
+            </div>
         <% end %>
+    </div>
   </div>
 </div>
