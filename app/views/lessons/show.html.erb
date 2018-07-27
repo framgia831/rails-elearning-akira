@@ -1,8 +1,36 @@
 <div class="main users-index">
 	<div class="container">
 		<h1 class="users-heading">Result</h1>
-		
-		
-		</div>
-	</div>
+      <div class="users-index-item">
+        <div class="row">
+          <div class="col-md-9">
+            <h4><%= @lesson.category.title %></h4>
+          </div>
+          <div class="col-md-3">
+            <strong>Result: </strong><%= @lesson.result %> of 5
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            
+          </div>
+          <div class="col-md-3">
+            <% @lesson_words.each do |lesson_word| %>
+              <%= lesson_word.word_answer.correct %><br>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <% @lesson_words.each do |lesson_word| %>
+              <%= lesson_word.word_answer.content %><br>
+            <% end %>
+          </div>
+          <div class="col-md-3">
+            <% @lesson_words.each do |lesson_word| %>
+              <%= lesson_word.word.content %><br>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
